@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Bookings</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ========== Sidebar ========== -->
+  <div class="sidebar">
+    <div class="logo">Gym<span>Fit</span></div>
+    <div class="sub">Admin Panel</div>
+    <a href="index.html">👥 Members</a>
+    <a href="plans.html">💳 Plans</a>
+    <a href="classes.html">📅 Classes</a>
+    <a href="trainers.html">🏋️ Trainers</a>
+    <a href="bookings.html" class="active">📝 Bookings</a>
+    <a href="messages.html">✉️ Messages</a>
+    <a href="../client/index.html" class="site-link">← View Website</a>
+  </div>
+
+  <!-- ========== Main ========== -->
+  <div class="main">
+    <h1>Class Bookings</h1>
+    <p class="page-sub">Book members into classes</p>
+
+    <div class="stat-row">
+      <div class="stat"><h2 id="totalBookings">0</h2><p>Total Bookings</p></div>
+      <div class="stat"><h2 id="pendingBookings">0</h2><p>Pending</p></div>
+    </div>
+
+    <div class="box">
+      <h2>Add New Booking</h2>
+      <form id="bookingForm">
+        <div class="form-row">
+          <div>
+            <label>Member</label>
+            <select id="member"></select>
+          </div>
+          <div>
+            <label>Class</label>
+            <select id="className"></select>
+          </div>
+          <div>
+            <label>Date</label>
+            <input type="date" id="date" required>
+          </div>
+        </div>
+        <button type="submit" class="btn">Add Booking</button>
+      </form>
+    </div>
+
+    <div class="box">
+      <h2>All Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Member</th>
+            <th>Class</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../client/js/storage.js"></script>
+  <script src="js/bookings.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Classes</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ========== Sidebar ========== -->
+  <div class="sidebar">
+    <div class="logo">Gym<span>Fit</span></div>
+    <div class="sub">Admin Panel</div>
+    <a href="index.html">👥 Members</a>
+    <a href="plans.html">💳 Plans</a>
+    <a href="classes.html" class="active">📅 Classes</a>
+    <a href="trainers.html">🏋️ Trainers</a>
+    <a href="bookings.html">📝 Bookings</a>
+    <a href="messages.html">✉️ Messages</a>
+    <a href="../client/index.html" class="site-link">← View Website</a>
+  </div>
+
+  <!-- ========== Main ========== -->
+  <div class="main">
+    <h1>Classes</h1>
+    <p class="page-sub">The class schedule shown on the website's Home page</p>
+
+    <div class="box">
+      <h2 id="formTitle">Add New Class</h2>
+      <form id="classForm">
+        <div class="form-row">
+          <div>
+            <label>Class Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div>
+            <label>Day</label>
+            <select id="day">
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+            </select>
+          </div>
+          <div>
+            <label>Time</label>
+            <input type="time" id="time" required>
+          </div>
+          <div>
+            <label>Trainer</label>
+            <select id="trainer"></select>
+          </div>
+        </div>
+        <button type="submit" class="btn" id="saveBtn">Add Class</button>
+        <button type="button" class="btn btn-grey" onclick="cancelEdit()">Clear</button>
+      </form>
+    </div>
+
+    <div class="box">
+      <h2>All Classes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Class</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Trainer</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../client/js/storage.js"></script>
+  <script src="js/classes.js"></script>
+</body>
+</html>

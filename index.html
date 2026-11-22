@@ -3,112 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GymFit Gym - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Admin - Members</title>
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <!-- ========== Header ========== -->
-  <header>
-    <div class="container navbar">
-      <a href="index.html" class="logo">Gym<span>Fit</span> Gym</a>
-      <button class="menu-btn" id="menuBtn">&#9776;</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="plans.html">Plans</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- ========== Hero ========== -->
-  <div class="hero">
-    <div class="container">
-      <h1>Build Your <span>Body</span><br>Transform Your <span>Life</span></h1>
-      <p>Modern equipment, expert trainers and energetic group classes. Your fitness journey starts at GymFit Gym.</p>
-      <a href="plans.html" class="btn">View Plans</a>
-      <a href="contact.html" class="btn btn-outline">Contact Us</a>
-    </div>
+  <!-- ========== Sidebar ========== -->
+  <div class="sidebar">
+    <div class="logo">Gym<span>Fit</span></div>
+    <div class="sub">Admin Panel</div>
+    <a href="index.html" class="active">👥 Members</a>
+    <a href="plans.html">💳 Plans</a>
+    <a href="classes.html">📅 Classes</a>
+    <a href="trainers.html">🏋️ Trainers</a>
+    <a href="bookings.html">📝 Bookings</a>
+    <a href="messages.html">✉️ Messages</a>
+    <a href="../client/index.html" class="site-link">← View Website</a>
   </div>
 
-  <!-- ========== Why choose us ========== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Why <span>Choose Us</span></h2>
-      <p class="section-sub">Everything you need to reach your fitness goals</p>
+  <!-- ========== Main ========== -->
+  <div class="main">
+    <h1>Members</h1>
+    <p class="page-sub">Add, edit and delete gym members</p>
 
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🏋️</div>
-          <h3>Modern Equipment</h3>
-          <p>Latest machines and free weights for every type of workout.</p>
-        </div>
-        <div class="card">
-          <div class="icon">💪</div>
-          <h3>Expert Trainers</h3>
-          <p>Certified trainers who guide you and keep you motivated.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🥗</div>
-          <h3>Diet Plans</h3>
-          <p>Simple, healthy diet charts made to match your goals.</p>
-        </div>
-        <div class="card">
-          <div class="icon">⏰</div>
-          <h3>Flexible Timing</h3>
-          <p>Open from early morning to late night, 6 days a week.</p>
-        </div>
-      </div>
+    <div class="stat-row">
+      <div class="stat"><h2 id="totalMembers">0</h2><p>Total Members</p></div>
+      <div class="stat"><h2 id="activeMembers">0</h2><p>Active Members</p></div>
     </div>
-  </section>
 
-  <!-- ========== Stats ========== -->
-  <div class="stats">
-    <div class="container grid">
-      <div><h2>500+</h2><p>Happy Members</p></div>
-      <div><h2>15+</h2><p>Expert Trainers</p></div>
-      <div><h2>30+</h2><p>Weekly Classes</p></div>
-      <div><h2>10</h2><p>Years Experience</p></div>
+    <!-- Add / Edit form -->
+    <div class="box">
+      <h2 id="formTitle">Add New Member</h2>
+      <form id="memberForm">
+        <div class="form-row">
+          <div>
+            <label>Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div>
+            <label>Phone</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div>
+            <label>Plan</label>
+            <select id="plan"></select>
+          </div>
+          <div>
+            <label>Join Date</label>
+            <input type="date" id="joinDate" required>
+          </div>
+          <div>
+            <label>Status</label>
+            <select id="status">
+              <option>Active</option>
+              <option>Expired</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn" id="saveBtn">Add Member</button>
+        <button type="button" class="btn btn-grey" onclick="cancelEdit()">Clear</button>
+      </form>
     </div>
-  </div>
 
-  <!-- ========== Class schedule (comes from admin) ========== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Class <span>Schedule</span></h2>
-      <p class="section-sub">Join our weekly group classes</p>
-
+    <!-- Members table -->
+    <div class="box">
+      <h2>All Members</h2>
       <table>
         <thead>
           <tr>
-            <th>Class</th>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Trainer</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Plan</th>
+            <th>Join Date</th>
+            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="classesList"></tbody>
+        <tbody id="tableBody"></tbody>
       </table>
     </div>
-  </section>
+  </div>
 
-  <!-- ========== Call to action ========== -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready to Start?</h2>
-      <p>Pick a membership plan that suits you and visit us today.</p>
-      <a href="plans.html" class="btn">See Membership Plans</a>
-    </div>
-  </section>
-
-  <!-- ========== Footer ========== -->
-  <footer>
-    <p>&copy; <span id="year"></span> GymFit Gym. All rights reserved.</p>
-    <p><a href="../admin/index.html">Admin Panel</a></p>
-  </footer>
-
-  <script src="js/storage.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../client/js/storage.js"></script>
+  <script src="js/members.js"></script>
 </body>
 </html>
