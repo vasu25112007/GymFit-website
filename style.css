@@ -1,0 +1,476 @@
+/* =========================================================
+   GymFit Gym - style.css (Client website)
+   ========================================================= */
+
+/* ---------- Colors ---------- */
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --border: #2a2a2e;
+  --accent: #ff6b1a;
+  --accent-dark: #e05500;
+  --text: #f2f2f2;
+  --muted: #a0a0a8;
+}
+
+/* ---------- Basic reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Header / Navbar ---------- */
+header {
+  background: #000;
+  border-bottom: 2px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  margin-left: 10px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.9) 40%, rgba(255, 107, 26, 0.35)),
+    repeating-linear-gradient(45deg, #151517 0 20px, #101011 20px 40px);
+}
+
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* ---------- Page banner (top of inner pages) ---------- */
+.page-banner {
+  padding: 70px 0;
+  text-align: center;
+  background: linear-gradient(120deg, #000, #2a1407);
+}
+
+.page-banner h1 {
+  font-size: 44px;
+  text-transform: uppercase;
+}
+
+.page-banner p {
+  color: var(--muted);
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 70px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+/* ---------- Cards grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.card .icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 107, 26, 0.15);
+  color: var(--accent);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* ---------- Stats bar ---------- */
+.stats {
+  background: var(--accent);
+  padding: 40px 0;
+}
+
+.stats .grid {
+  text-align: center;
+}
+
+.stats h2 {
+  font-size: 42px;
+}
+
+.stats p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------- Plans ---------- */
+.plan-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card .price {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 10px 0;
+}
+
+.plan-card .price small {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.plan-card ul {
+  list-style: none;
+  text-align: left;
+  margin-top: 16px;
+}
+
+.plan-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.plan-card li::before {
+  content: "✔ ";
+  color: var(--accent);
+}
+
+/* Middle plan stands out */
+.plan-card.popular {
+  border: 2px solid var(--accent);
+}
+
+/* ---------- About ---------- */
+.about-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-box {
+  height: 320px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+}
+
+.about-row p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.trainer-card {
+  text-align: center;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+/* ---------- Contact ---------- */
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+}
+
+.info-item {
+  margin-bottom: 22px;
+}
+
+.info-item h4 {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.info-item p {
+  color: var(--muted);
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.success-msg {
+  display: none;
+  background: #133d1f;
+  color: #7ee69a;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Table (class schedule) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--accent);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* ---------- Call to action ---------- */
+.cta {
+  text-align: center;
+  background: linear-gradient(120deg, #2a1407, #000);
+}
+
+.cta h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #000;
+  border-top: 2px solid var(--accent);
+  text-align: center;
+  padding: 30px 0;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--accent);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    gap: 18px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .about-row,
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}

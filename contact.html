@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymFit Gym - Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Gym<span>Fit</span> Gym</a>
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>Contact Us</h1>
+    <p>Home / Contact</p>
+  </div>
+
+  <section>
+    <div class="container contact-row">
+
+      <!-- Gym details -->
+      <div>
+        <h2 class="section-title" style="text-align:left">Get In <span>Touch</span></h2>
+        <p class="section-sub" style="text-align:left">Have a question? Send us a message.</p>
+
+        <div class="info-item">
+          <h4>📍 Address</h4>
+          <p>123 Fitness Street, Main Road, Your City</p>
+        </div>
+        <div class="info-item">
+          <h4>📞 Phone</h4>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="info-item">
+          <h4>✉️ Email</h4>
+          <p>info@gymfitgym.com</p>
+        </div>
+        <div class="info-item">
+          <h4>⏰ Opening Hours</h4>
+          <p>Mon - Sat: 5:00 AM - 10:00 PM<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <!-- Contact form (messages go to admin panel) -->
+      <div class="card">
+        <div class="success-msg" id="successMsg">Thank you! Your message has been sent.</div>
+
+        <form id="contactForm">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone">
+
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option>General Question</option>
+            <option>Membership Plans</option>
+            <option>Personal Training</option>
+            <option>Class Booking</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p>&copy; <span id="year"></span> GymFit Gym. All rights reserved.</p>
+    <p><a href="../admin/index.html">Admin Panel</a></p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

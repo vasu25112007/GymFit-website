@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymFit Gym - About</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Gym<span>Fit</span> Gym</a>
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>About Us</h1>
+    <p>Home / About</p>
+  </div>
+
+  <!-- ========== Our story ========== -->
+  <section>
+    <div class="container about-row">
+      <div class="about-box">🏋️</div>
+      <div>
+        <h2 class="section-title" style="text-align:left">Our <span>Story</span></h2>
+        <p>GymFit Gym started in 2016 with one simple goal: to make fitness easy and fun for everyone. What began as a small room with a few machines is now a full gym with hundreds of members.</p>
+        <p>We believe that every person can become stronger and healthier with the right guidance. Our trainers create workouts for beginners as well as advanced athletes.</p>
+        <p>Whether you want to lose weight, build muscle or just stay active, GymFit Gym is the place for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Mission & vision ========== -->
+  <section style="padding-top:0">
+    <div class="container grid">
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>Help every member reach their fitness goal in a safe and friendly place.</p>
+      </div>
+      <div class="card">
+        <div class="icon">👁️</div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted and loved gym in the city.</p>
+      </div>
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>Our Values</h3>
+        <p>Discipline, hard work, respect and a positive attitude.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Trainers (comes from admin) ========== -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Meet Our <span>Trainers</span></h2>
+      <p class="section-sub">Certified professionals who will push you further</p>
+      <div class="grid" id="trainersList"></div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p>&copy; <span id="year"></span> GymFit Gym. All rights reserved.</p>
+    <p><a href="../admin/index.html">Admin Panel</a></p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymFit Gym - Membership Plans</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Gym<span>Fit</span> Gym</a>
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="plans.html" class="active">Plans</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>Membership Plans</h1>
+    <p>Home / Plans</p>
+  </div>
+
+  <!-- ========== Plans (comes from admin) ========== -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Choose Your <span>Plan</span></h2>
+      <p class="section-sub">Simple pricing. No hidden charges.</p>
+      <div class="grid" id="plansList"></div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p>&copy; <span id="year"></span> GymFit Gym. All rights reserved.</p>
+    <p><a href="../admin/index.html">Admin Panel</a></p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
